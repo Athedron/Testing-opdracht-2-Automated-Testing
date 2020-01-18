@@ -8,14 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public static int playerPosition = 1;
     public Vector3[] playerPositions;
 
-    public GameObject uiObject;
-    public GameObject playerCharacter;
-    public GameObject levelObjects;
-
     void Start()
     {
-        uiObject.SetActive(false);
-
         player = FindObjectOfType<PlayerMovement>();
         
         playerPositions = new Vector3[3];
@@ -49,17 +43,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = playerPositions[playerPosition];
-
-        Death();
-    }
-
-    void Death()
-    {
-        if (PlayerLives.lives <= 0)
-        {
-            playerCharacter.SetActive(false);
-            levelObjects.SetActive(false);
-            uiObject.SetActive(true);
-        }
     }
 }
