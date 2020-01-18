@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerMovement player;
     public static int playerPosition = 1;
     public Vector3[] playerPositions;
 
     void Start()
-    {
-        player = FindObjectOfType<PlayerMovement>();
-        
+    {   
         playerPositions = new Vector3[3];
 
         playerPositions[0] = new Vector3(-5f, 1f, 0f);
