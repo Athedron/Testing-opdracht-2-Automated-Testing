@@ -3849,6 +3849,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveCount: {fileID: 1626015390}
+  uiObject: {fileID: 0}
+  playerCharacter: {fileID: 0}
+  levelObjects: {fileID: 0}
 --- !u!114 &1626015390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4822,11 +4825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4320ce138af7e544b81556f920901348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1879071873}
   playerPositions: []
-  uiObject: {fileID: 1602604940}
-  playerCharacter: {fileID: 1879071867}
-  levelObjects: {fileID: 1664871403}
 --- !u!114 &1879071874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4840,6 +4839,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   liveCount: {fileID: 1626015390}
+  uiObject: {fileID: 1602604940}
+  playerCharacter: {fileID: 1879071867}
+  levelObjects: {fileID: 1664871403}
 --- !u!65 &1879071875
 BoxCollider:
   m_ObjectHideFlags: 0
