@@ -4839,7 +4839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4102707714742d447954c674c37ae519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liveCount: {fileID: 0}
+  liveCount: {fileID: 1626015390}
 --- !u!65 &1879071875
 BoxCollider:
   m_ObjectHideFlags: 0
