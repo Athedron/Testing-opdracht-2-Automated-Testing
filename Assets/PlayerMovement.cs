@@ -21,24 +21,34 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            playerPosition--;
-
-            if (playerPosition < 0)
-            {
-                playerPosition = 0;
-            }
+            MoveLeft();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            playerPosition++;
-
-            if (playerPosition > 2)
-            {
-                playerPosition = 2;
-            }
+            MoveRight();
         }
 
         transform.position = playerPositions[playerPosition];
+    }
+
+    void MoveLeft()
+    {
+        playerPosition--;
+
+        if (playerPosition < 0)
+        {
+            playerPosition = 0;
+        }
+    }
+
+    void MoveRight()
+    {
+        playerPosition++;
+
+        if (playerPosition > 2)
+        {
+            playerPosition = 2;
+        }
     }
 }
