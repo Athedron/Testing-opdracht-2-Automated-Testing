@@ -12,25 +12,37 @@ public class PlayerLives : MonoBehaviour
     public GameObject playerCharacter;
     public GameObject levelObjects;
 
+    bool isDead = false;
+
     void Start()
     {
         //uiObject.SetActive(false);
-        lives = 6;
+        lives = 3;
     }
 
     void Update()
     {
-        liveCount.text = "Lives: " + lives/2;
-        Death();
+        liveCount.text = "Lives: " + lives;
+
+        if (lives == 0)
+        {
+            isDead = true;
+            Death();
+        }
+
+        
     }
 
     void Death()
     {
-        if (PlayerLives.lives <= 0)
+        if (isDead)
         {
             playerCharacter.SetActive(false);
             levelObjects.SetActive(false);
             uiObject.SetActive(true);
+            lives = 3;
+            isDead = false;
         }
+       
     }
 }

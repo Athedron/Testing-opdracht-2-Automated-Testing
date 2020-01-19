@@ -18,6 +18,7 @@ public class ObstacleCollision : MonoBehaviour
     {
         PlayerLives.lives--;
 
+        print("triggered");
         if (invincibility == false)
         {
             invincibility = true;
