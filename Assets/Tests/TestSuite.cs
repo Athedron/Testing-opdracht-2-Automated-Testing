@@ -8,16 +8,16 @@ namespace Tests
 {
     public class TestSuite
     {
-        private GameObject level;
-        private LevelBehaviour levelMovement;
-        private PlayerMovement player;
+        public GameObject level;
+        public LevelBehaviour levelMovement;
+        public PlayerMovement player;
 
 
 
         [SetUp]
         public void Setup()
         {
-            level = Object.Instantiate(Resources.Load<GameObject>("Prefab/LevelPrefab"));
+            level = Object.Instantiate(Resources.Load<GameObject>("Prefabs/levelPrefab"));
             levelMovement = level.GetComponent<LevelBehaviour>();
             player = levelMovement.player;
         }
@@ -48,7 +48,7 @@ namespace Tests
             yield return new WaitForSecondsRealtime(1f);
             player.MoveRight();
             yield return new WaitForSecondsRealtime(1f);
-            Assert.AreEqual(0, player.playerPosition);
+            Assert.AreEqual(2, player.playerPosition);
             player.MoveRight();
 
             yield return null;

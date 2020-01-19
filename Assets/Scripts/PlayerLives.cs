@@ -14,7 +14,7 @@ public class PlayerLives : MonoBehaviour
 
     void Start()
     {
-        uiObject.SetActive(false);
+        //uiObject.SetActive(false);
         lives = 6;
     }
 
