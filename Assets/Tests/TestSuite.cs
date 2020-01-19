@@ -8,21 +8,56 @@ namespace Tests
 {
     public class TestSuite
     {
-        // A Test behaves as an ordinary method
-        [Test]
-        public void TestSuiteSimplePasses()
+        private GameObject level;
+        private LevelBehaviour levelMovement;
+        private PlayerMovement player;
+
+
+
+        [SetUp]
+        public void Setup()
         {
-            // Use the Assert class to test conditions
+            level = Object.Instantiate(Resources.Load<GameObject>("Prefab/LevelPrefab"));
+            levelMovement = level.GetComponent<LevelBehaviour>();
+            player = levelMovement.player;
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator TestSuiteWithEnumeratorPasses()
+        [TearDown]
+        public void TearDown()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
+            Object.Destroy(level.gameObject);
+        }
+
+        [UnityTest]
+        public IEnumerator DoesThePlayerMoveOutOffBoundsWhilePressingLeftWhenAtLeftLane()
+        {
+            SetPlayerInMiddleLane();
+            yield return new WaitForSecondsRealtime(1f);
+            player.MoveLeft();
+            yield return new WaitForSecondsRealtime(1f);
+            Assert.AreEqual(0, player.playerPosition);
+            player.MoveLeft();
+
             yield return null;
         }
+
+        [UnityTest]
+        public IEnumerator DoesThePlayerMoveOutOffBoundsWhilePressingRightWhenAtRightLane()
+        {
+            SetPlayerInMiddleLane();
+            yield return new WaitForSecondsRealtime(1f);
+            player.MoveRight();
+            yield return new WaitForSecondsRealtime(1f);
+            Assert.AreEqual(0, player.playerPosition);
+            player.MoveRight();
+
+            yield return null;
+        }
+
+        void SetPlayerInMiddleLane()
+        {
+            player.playerPosition = 1;
+        }
+
     }
 }

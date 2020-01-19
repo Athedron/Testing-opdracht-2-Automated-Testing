@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public static int playerPosition = 1;
+    public int playerPosition = 1;
     public Vector3[] playerPositions;
 
     void Start()
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = playerPositions[playerPosition];
     }
 
-    void MoveLeft()
+    public void MoveLeft()
     {
         playerPosition--;
 
@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void MoveRight()
+    public void MoveRight()
     {
         playerPosition++;
 
